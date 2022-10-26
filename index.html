@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 
-<head>
-    <title>My First Page</title>
-</head>
+<body onload="startTime()">
 
-<body>
-    <h1>My First Page</h1>
-    <p>My first paragraph.</p>
+    <h1 id="txt"></h1>
+
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            m = checkTime(m);
+            document.getElementById('txt').innerHTML = h + ":" + m;
+            setTimeout(startTime, 60000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+</body>
 
 </html>
