@@ -12,6 +12,7 @@
             let m = today.getMinutes();
             m = checkTime(m);
             document.getElementById('txt').innerHTML = h + ":" + m;
+            document.getElementById('txt').textContent = h + ":" + m;
             setTimeout(startTime, 60000);
         }
 
